@@ -1,0 +1,13 @@
+<div>
+    <h2>Country</h2>
+    <form [formGroup]="searchForm" >
+      <div>
+        <input type="text" placeholder="Search" formControlName="searchField" >
+      </div>
+</form>
+</div>
+<ul>
+    <li *ngFor="let country of countries">
+        {{country?.name?.common}}
+    </li>
+</ul>
