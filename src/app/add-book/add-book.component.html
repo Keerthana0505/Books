@@ -1,0 +1,42 @@
+<form class="add-book-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="name" formControlName="name" />
+  
+    <div *ngIf="name?.invalid && name?.touched">
+      <p *ngIf="name?.errors?.['required']">Name is Required</p>
+    </div>
+     
+    <input type="text" placeholder="author" formControlName="author" />
+  
+    <div *ngIf="author?.invalid && author?.touched">
+      <p *ngIf="author?.errors?.['required']">Author is Required</p>
+    </div>
+
+    <input type="text" placeholder="poster" formControlName="poster" />
+    <div *ngIf="poster?.invalid && poster?.touched">
+        <p *ngIf="poster?.errors?.['required']">URL is Required</p>
+        <p *ngIf="poster?.errors?.['pattern']">Need a valid URL 😉</p>
+      </div>
+
+    <input type="text" placeholder="publisheddate" formControlName="publisheddate" />
+  
+    <div *ngIf="publisheddate?.invalid && publisheddate?.touched">
+      <p *ngIf="publisheddate?.errors?.['required']">Publishment Date is Required</p>
+    </div>
+    
+    <input type="text" placeholder="status" formControlName="status" />
+  
+    <div *ngIf="status?.invalid && status?.touched">
+      <p *ngIf="name?.errors?.['required']">Status is Required</p>
+    </div>
+   
+    
+  
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="addBookForm.invalid"
+    >
+      Add Book
+    </button>
+  </form>

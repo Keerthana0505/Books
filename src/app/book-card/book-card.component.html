@@ -1,0 +1,19 @@
+<div class="book-container">
+    <img class="book-poster" [src]="book.poster" [alt]="book.name" />
+    <div class="book-spec">
+      <h2>{{ book.name }}</h2>
+      <p> {{ book.author }}</p>
+      <p>{{book.publicationdate}}</p>
+      <p>{{book.status}}</p>
+
+    </div>
+     <button (click)="delbook(book.id)">delete</button>
+     <button (click)="goToDetails(book.id)">Details</button>
+     <button (click)="goToEdit(book.id)">Edit</button>
+    
+    <!-- <button (click)="delbook(book.id)">delete</button>
+    <button (click)="goToDetails(book.id)">Info</button> -->
+    <!-- <div class="action-items">
+      <app-counter></app-counter>
+    </div> -->
+  </div>

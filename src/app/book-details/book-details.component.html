@@ -1,0 +1,10 @@
+<div *ngIf="book" class="book-container">
+    <img class="book-poster" [src]="book.poster" [alt]="book.name" />
+    <div class="book-spec">
+      <h2>{{ book.name }}</h2>
+      <p> {{ book.author }}</p>
+      <p>{{book.publicationdate}}</p>
+      <p>{{book.status}}</p>
+
+    </div>
+  </div>

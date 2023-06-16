@@ -1,0 +1,9 @@
+<app-add-book></app-add-book>
+<div class="book-list-container">
+   
+    <app-book-card
+      *ngFor="let bk of bookList$ | async; trackBy: trackByFn"
+      [book]="bk"
+      (delete)="delgetBook($event)"
+    ></app-book-card>
+  </div>
