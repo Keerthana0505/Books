@@ -1,10 +1,24 @@
-<div *ngIf="book" class="book-container">
-    <img class="book-poster" [src]="book.poster" [alt]="book.name" />
-    <div class="book-spec">
-      <h2>{{ book.name }}</h2>
-      <p> {{ book.author }}</p>
-      <p>{{book.publicationdate}}</p>
-      <p>{{book.status}}</p>
-
-    </div>
+<body><div class="book-container">
+  <img class="book-poster" [src]="book.poster" [alt]="book.name" />
+  <div class="book-spec">
+    <h1>{{ book.name }}</h1>
+    <p>{{ book.author }}</p>
   </div>
+
+
+  <button (click)="toggleDescription()" mat-icon-button aria-label="description">
+    <mat-icon>keyboard_control_key</mat-icon>
+  </button>
+  <p *ngIf="show" class="movie-summary">{{ book.description }}</p>
+
+
+ 
+ 
+  <div class="action-items">  <button (click)="delbook(book.id)" mat-icon-button aria-label="Delete Icon">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button (click)="goToEdit(book.id)" mat-icon-button aria-label="Edit Icon">
+    <mat-icon>edit_note</mat-icon>
+  </button></div>
+</div>
+</body>

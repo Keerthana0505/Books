@@ -1,6 +1,5 @@
-<app-add-book></app-add-book>
+<app-search></app-search>
 <div class="book-list-container">
-   
     <app-book-card
       *ngFor="let bk of bookList$ | async; trackBy: trackByFn"
       [book]="bk"

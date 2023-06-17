@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { Book } from '../home/home.component';
 import {
-  FormGroup,
-  FormControl,
   Validators,
   FormBuilder,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from '../books.service';
+import { DatePipe } from '@angular/common';
+import { Route } from '@angular/router';
 @Component({
   selector: 'app-edit-book',
   templateUrl: './edit-book.component.html',
@@ -18,27 +17,21 @@ export class EditBookComponent {
   constructor(
     private fb: FormBuilder,
     private booksService: BooksService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router,private datepipe:DatePipe,
+    private route:ActivatedRoute
   ) {}
-  ngOnInit() {
-    this.route.paramMap.subscribe((route) => {
-      const movieId = route.get('id');
-
-      this.booksService.getbookById(movieId as string).subscribe((data) => {
-        console.log(data);
-        this.addBookForm.patchValue(data as any);
-      });
-    });
-  }
- 
+  publicationdateControl: any;
+  selected: string='';
+  select:string='';
   addBookForm = this.fb.group({
     id:'',
     name: ['', Validators.required],
     author: ['', [Validators.required]],
+    category:['',[Validators.required]],
     poster: ['', [Validators.required, Validators.pattern('^(http|https).*')]],
-    publisheddate: ['', [Validators.required]],
+   publicationdate: ['', [Validators.required]],
     status: ['', [Validators.required]],
+    description:['', [Validators.required, Validators.minLength(20)]]
   });
   get name() {
     return this.addBookForm.get('name');
@@ -49,20 +42,39 @@ export class EditBookComponent {
   get poster() {
     return this.addBookForm.get('poster');
   }
-  get publisheddate() {
-    return this.addBookForm.get('publisheddate');
+  get publicationdate() {
+    return this.addBookForm.get('publicationdate');
   }
   get status() {
     return this.addBookForm.get('status');
   }
-  onSubmit(){
+  get category() {
+    return this.addBookForm.get('category');
+  }
+  get description() {
+    return this.addBookForm.get('description');
+  }
+  ngOnInit() {
+
+    this.route.paramMap.subscribe((route) => {
+      const bookId = route.get('id');
+      this.booksService.getbookById(bookId as string).subscribe((data) => {
+        this.addBookForm.patchValue(data as any);
+      });
+    });
+  }
+  onSubmit(){ 
     if (this.addBookForm.valid) {
+      const newBook = this.addBookForm.value;
+    const dateToSave = this.datepipe.transform(newBook.publicationdate, 'MM/dd/yyyy');
+    newBook.publicationdate = dateToSave;
+    
+
       const updatedBook = this.addBookForm.value;
       this.booksService.updateBook(updatedBook as any).subscribe(() => {
-        this.router.navigate(['/books']);
+        this.router.navigate(['/booklist']);
       });
     }
-
-
+  
 }
 }

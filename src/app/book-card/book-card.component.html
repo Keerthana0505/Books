@@ -1,15 +1,28 @@
-<div class="book-container">
+<body><div class="book-container">
     <img class="book-poster" [src]="book.poster" [alt]="book.name" />
     <div class="book-spec">
-      <h2>{{ book.name }}</h2>
-      <p> {{ book.author }}</p>
-      <p>{{book.publicationdate}}</p>
-      <p>{{book.status}}</p>
+
+      <div class="book_name">{{ book.name }}</div>
+      <div class="author-name">{{ book.author }}</div>
+      <div class="pdate">{{book.publicationdate}}</div>
+      <div class="pdate">{{book.category}}</div>
+      <div class="pdate"> <mat-icon  aria-hidden="false" aria-label="status icon" fontIcon="library_books"></mat-icon>  {{book.status}}</div>
+      <div class="book-button">
+      
+        <button (click)="delbook(book.id)" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button (click)="goToEdit(book.id)" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>edit_note</mat-icon>
+        </button>
+        <button (click)="goToDetails(book.id)" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>info</mat-icon>
+        </button>
+       </div>
+       
 
     </div>
-     <button (click)="delbook(book.id)">delete</button>
-     <button (click)="goToDetails(book.id)">Details</button>
-     <button (click)="goToEdit(book.id)">Edit</button>
+    
     
     <!-- <button (click)="delbook(book.id)">delete</button>
     <button (click)="goToDetails(book.id)">Info</button> -->
@@ -17,3 +30,5 @@
       <app-counter></app-counter>
     </div> -->
   </div>
+</body>
+  

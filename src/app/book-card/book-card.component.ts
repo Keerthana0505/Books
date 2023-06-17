@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Book } from '../home/home.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,10 +13,13 @@ export class BookCardComponent {
     "id": "1",
     "name": "Rich Dad Poor Dad",
     "author":"Robert T. Kiyosaki and Sharon Lechte",
+    "category":"Finance",
     "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSlrQfRuyGKdvR9r_1QROkXsmnX0sV_-XeEgKk0w80lEGql4GGg",
     "publicationdate": "25-05-2020",
-    "status": "Reading"
+    "status": "Reading",
+    "description":"Rich Dad Poor Dad is a 1997 book written by Robert T. Kiyosaki and Sharon Lechter. It advocates the importance of financial literacy, financial independence and building wealth through investing in assets, real estate investing, starting and owning businesses, as well as increasing one's financial intelligence."
   };
+ 
   @Output() delete = new EventEmitter<string>();
   movieList$: any;
 

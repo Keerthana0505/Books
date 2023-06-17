@@ -1,9 +1,35 @@
-<header>
-  <nav>
-    <ul class="nav-links-container">
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/books">Books</a></li>
-    </ul>
-  </nav>
-</header>
+
+<mat-toolbar color="primary" *ngIf="route.snapshot.url[0]?.path !== 'home'">
+  <span>My Book</span>
+  
+  <span class="example-spacer"></span>
+
+  <button mat-button (click)="gohome()" class="example-icon" aria-label="List of my books">
+    Home
+  </button>
+
+  <button mat-button (click)="mybook()" class="example-icon" aria-label="List of my books">
+    My Books
+  </button>
+  <button mat-button (click)="addbook()" class="example-icon" aria-label="List of my books">
+    Add Book
+  </button>
+
+
+  <button mat-button (click)="mybooksearch()" class="example-icon" aria-label="List of my books">
+    Search
+  </button>
+
+  
+</mat-toolbar>
+
 <router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+

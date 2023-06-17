@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs'
+import { catchError, debounceTime, distinctUntilChanged, switchMap } from 'rxjs'
+import { Book } from '../home/home.component';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  countries:any
+  books:any
   constructor(private http: HttpClient, private fb: FormBuilder) {
   }
 
@@ -25,15 +27,24 @@ export class SearchComponent {
      this.searchForm.get('searchField')?.valueChanges.pipe(debounceTime(500),
      distinctUntilChanged(),switchMap((val)=>this.search(val as string)))
 
-     .subscribe((value:any)=>{this.countries=value;});
+     .subscribe((value:any)=>{this.books=value;});
 
   }
-  search(region: string)
-  {
-
-    return this.http.get(`https://restcountries.com/v3.1/region/${region}`)
-
-  }
-
-
+  
+    search(region: string) {
+      if (!region || region.trim() === '') {
+        return this.http.get('https://648bf9078620b8bae7ebfae8.mockapi.io/books');
+      } else {
+        return this.http.get(`https://648bf9078620b8bae7ebfae8.mockapi.io/books?name=${region}`);
+      }
+    }
+    searchbook(id:string)
+    {
+      return this.http
+    .get<Book>(`https://648bf9078620b8bae7ebfae8.mockapi.io/books/${id}`)
+    .pipe(catchError((err) => []));
+    }
+    get searchField() {
+      return this.searchForm.get('Search');
+    }
 }
