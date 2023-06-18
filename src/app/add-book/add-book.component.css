@@ -6,6 +6,7 @@
   float: left;
   object-fit: fill;
 }
+
 .add-book-form {
   display: flex;
   gap: 24px;
