@@ -1,107 +1,139 @@
 <body>
-  <div style="width: 50%; float:left">
-
-  <img class="imagebook" src="https://media.istockphoto.com/id/628925698/vector/pile-of-hardcover-books.jpg?s=612x612&w=0&k=20&c=UskxzCZAQ4LXrgMhgW3M8Q5jdtWFPZ8WxwosF6h6euI=" alt="Image of Book">
- </div>
- <div style="width: 50% ; float:right">
-  <form class="add-book-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Book Name</mat-label>
-      <input type="text" matInput formControlName="name"
-             placeholder="Enter the name's name...">
-      <mat-error *ngIf="(name?.invalid && name?.touched)&& name?.errors?.['required'] ">
-        Book name  is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-label>Author Name</mat-label>
-    <input type="text" matInput formControlName="author"
-           placeholder="Enter the author's name...">
-    <mat-error *ngIf="(author?.invalid && author?.touched)&& author?.errors?.['required'] ">
-      Book author  is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-
-
-
-  <mat-form-field class="example-full-width">
-    <mat-label>Select the Genre</mat-label>
-      <mat-select [(value)]="selected" formControlName="category">
-        <mat-option>None</mat-option>
-        <mat-option value="Finance">Finance</mat-option>
-        <mat-option value="Business">Business</mat-option>
-      <mat-option value="Horror">Horror</mat-option>
-      <mat-option value="Fantasy">Fantasy</mat-option>
-      <mat-option value="Sci-Fi">Sci-Fi</mat-option>
-       
-      </mat-select>
-      <!-- <mat-error *ngIf="(category.invalid && category.touched)&& category.errors?.['required'] ">
-        Provide the Genre
-        </mat-error> -->
-    </mat-form-field>
-  
-  
-  <mat-form-field class="example-full-width">
-    <mat-label>Image </mat-label>
-    <input type="text" matInput formControlName="poster"
-           placeholder="Enter the URL of the book image">
-    <mat-error *ngIf="(poster?.invalid && poster?.touched)&& poster?.errors?.['required'] ">
-      URL  is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-
-  
-
-   
-
-  <mat-form-field class="example-full-width">
-    <mat-label>Choose a date</mat-label>
-    <input type="text" matInput [matDatepicker]="picker" formControlName="publicationdate">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    <mat-error *ngIf="(publicationdate?.invalid && publicationdate?.touched)&& publicationdate?.errors?.['required'] ">
-      Please Select the Published Date
-      </mat-error>
-  </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-    <mat-label>Select the status</mat-label>
-      <mat-select [(value)]="select" formControlName="status">
-        <mat-option>None</mat-option>
-        <mat-option value="Reading">Currently Reading</mat-option>
-        <mat-option value="Have Read">Have Read</mat-option>
-        <mat-option value="plan to read">Plan to Read</mat-option>
-       
-      </mat-select>
-      <mat-error *ngIf="(status?.invalid && status?.touched)&& status?.errors?.['required'] ">
-        Provide the status
-        </mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Description </mat-label>
-      <input type="text" matInput formControlName="description"
-             placeholder="Enter theescription of the book ">
-             <mat-error *ngIf="description && description.invalid && description.touched && description.errors?.['required']">
-
-        Description  is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-
-    <button class="example-full-width1"
-      mat-raised-button
-      color="primary"
-      type="submit"
-      [disabled]="addBookForm.invalid"
+  <div style="width: 50%; float: left">
+    <img
+      class="imagebook"
+      src="https://media.istockphoto.com/id/628925698/vector/pile-of-hardcover-books.jpg?s=612x612&w=0&k=20&c=UskxzCZAQ4LXrgMhgW3M8Q5jdtWFPZ8WxwosF6h6euI="
+      alt="Image of Book"
+    />
+  </div>
+  <div style="width: 50%; float: right">
+    <form
+      class="add-book-form"
+      [formGroup]="addBookForm"
+      (ngSubmit)="onSubmit()"
     >
-      Update
-    </button>
-  
-</form>
- </div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Book Name</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="name"
+          placeholder="Enter the name's name..."
+        />
+        <mat-error
+          *ngIf="(name?.invalid && name?.touched)&& name?.errors?.['required'] "
+        >
+          Book name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Author Name</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="author"
+          placeholder="Enter the author's name..."
+        />
+        <mat-error
+          *ngIf="(author?.invalid && author?.touched)&& author?.errors?.['required'] "
+        >
+          Book author is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Select the Genre</mat-label>
+        <mat-select [(value)]="selected" formControlName="category">
+          <mat-option>None</mat-option>
+          <mat-option value="Finance">Finance</mat-option>
+          <mat-option value="Business">Business</mat-option>
+          <mat-option value="Horror">Horror</mat-option>
+          <mat-option value="Fantasy">Fantasy</mat-option>
+          <mat-option value="Sci-Fi">Sci-Fi</mat-option>
+        </mat-select>
+        <mat-error
+        *ngIf="(category?.invalid && category?.touched) && category?.errors?.['required']"
+      >
+        Provide the category
+      </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Image </mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="poster"
+          placeholder="Enter the URL of the book image"
+        />
+        <mat-error
+          *ngIf="(poster?.invalid && poster?.touched)&& poster?.errors?.['required'] "
+        >
+          URL is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Choose a date</mat-label>
+        <input
+          type="text"
+          matInput
+          [matDatepicker]="picker"
+          formControlName="publicationdate"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error
+          *ngIf="(publicationdate?.invalid && publicationdate?.touched)&& publicationdate?.errors?.['required'] "
+        >
+          Please Select the Published Date
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Select the status</mat-label>
+        <mat-select [(value)]="select" formControlName="status">
+          <mat-option>None</mat-option>
+          <mat-option value="Reading">Currently Reading</mat-option>
+          <mat-option value="Have Read">Have Read</mat-option>
+          <mat-option value="plan to read">Plan to Read</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="(status?.invalid && status?.touched)&& status?.errors?.['required'] "
+        >
+          Provide the status
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Description </mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="description"
+          placeholder="Enter the Description of the book "
+        />
+        <mat-error
+          *ngIf="description && description.invalid && description.touched && description.errors?.['required']"
+        >
+          Description is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        class="example-full-width1"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="addBookForm.invalid"
+      >
+        Update
+      </button>
+    </form>
+  </div>
 </body>
-
-

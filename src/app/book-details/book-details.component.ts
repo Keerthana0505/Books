@@ -4,11 +4,10 @@ import { BooksService } from '../books.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
-  styleUrls: ['./book-details.component.css']
+  styleUrls: ['./book-details.component.css'],
 })
 export class BookDetailsComponent {
   book: any;
@@ -21,14 +20,14 @@ export class BookDetailsComponent {
     private sanitizer: DomSanitizer,
     private router: Router
   ) {}
-  show=true;
+  show = true;
   toggleDescription() {
     this.show = !this.show;
   }
   delbook(id: string) {
     this.delete.emit(id);
   }
-  
+
   goToEdit(id: string) {
     this.router.navigate([`/books/edit/${id}`]);
   }
@@ -41,5 +40,4 @@ export class BookDetailsComponent {
       });
     });
   }
-
 }

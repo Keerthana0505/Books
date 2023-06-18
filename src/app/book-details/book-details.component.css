@@ -1,59 +1,50 @@
-
 .book-container {
- 
-
-    align-content: center;
-    justify-content: center;
-    border-radius: 16px;
-    overflow: hidden;
-    padding: 16px;
-    margin-top: 10px;
-    border-radius: 20px;
-    overflow: hidden;
-    color: aliceblue;
-    padding-left: 30px;
-    background-color: black; 
+  align-content: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 16px;
+  margin-top: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  color: aliceblue;
+  padding-left: 30px;
+  background-color: black;
   padding-right: 30px;
   width: 90%;
-    
-  }
-  .left{
-   padding-top: 16px;
-    height:100%;
-    width: 100%; 
-    padding-left: 50px;
-    object-fit: cover;
-    width :100%;
-    
-  }
-  .book-poster {
-    height: 400px;
-    object-fit:fill;
-    width: 80%; 
-    /* border-radius: 17px; */
-  }
-  .book-spec {
-    /* display: flex; */
-    align-items: center;
-    /* justify-content; */
-  }
-  
-  /* Child selector - combinators */
-  .book-spec > h1{
-    font-size:25px ;
-    font-weight: bold;
-  }
-  .book-spec > p {
-    font-size: 20px;
-    font-style: 17S;
-    font-weight: bold;
-    font-style: italic;
-  }
-  
-  .book-summary {
-    margin-top: 0px;
-    color: #7c6e6e;
-    justify-content:center;
-    margin-bottom: 25px;
-  }
- 
+}
+.left {
+  padding-top: 16px;
+  height: 100%;
+  width: 100%;
+  padding-left: 50px;
+  object-fit: cover;
+  width: 100%;
+}
+.book-poster {
+  height: 400px;
+  object-fit: fill;
+  width: 80%;
+
+}
+.book-spec {
+  align-items: center;
+}
+
+.book-spec > h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+.book-spec > p {
+  font-size: 20px;
+  font-style: 17s;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.book-summary {
+  margin-top: 0px;
+  color: #7c6e6e;
+  justify-content: center;
+  margin-bottom: 25px;
+}

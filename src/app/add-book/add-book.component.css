@@ -1,24 +1,21 @@
-
-.imagebook{
+.imagebook {
   width: 100%;
   height: 700px;
   margin-right: 10px;
- padding-left: 20px;
-   float:left;
-   object-fit: fill;
+  padding-left: 20px;
+  float: left;
+  object-fit: fill;
 }
 .add-book-form {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 15px;
-    width: 80%;
-    float:right;
-    
-   
-  }
-.example-full-width{
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 15px;
+  width: 80%;
+  float: right;
+}
+.example-full-width {
   width: 80%;
   height: 70px;
 }
@@ -26,6 +23,6 @@
   width: 20px;
   height: 10px;
 }
-.example-full-width1{
-  width:350px;
+.example-full-width1 {
+  width: 350px;
 }

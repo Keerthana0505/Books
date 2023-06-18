@@ -1,9 +1,21 @@
-  <div class="home-image" *ngIf="route.snapshot.url[0]?.path === '' || route.snapshot.url[0]?.path === 'home'">
-    <img class="img" src="https://media4.giphy.com/media/w0Fy3hcQuZxxQgo0KR/giphy.gif" alt="GIF Image">
-  </div>
-  <div class="home-text" *ngIf="route.snapshot.url[0]?.path === '' || route.snapshot.url[0]?.path === 'home'">
-    <p class="wel-text"> WELCOME </p>
-    <p class="wel-text"> ENJOY YOUR READING </p>
-  </div>
-  
-  
+<div
+  class="home-image"
+  *ngIf="
+    route.snapshot.url[0]?.path === '' || route.snapshot.url[0]?.path === 'home'
+  "
+>
+  <img
+    class="img"
+    src="https://media4.giphy.com/media/w0Fy3hcQuZxxQgo0KR/giphy.gif"
+    alt="GIF Image"
+  />
+</div>
+<div
+  class="home-text"
+  *ngIf="
+    route.snapshot.url[0]?.path === '' || route.snapshot.url[0]?.path === 'home'
+  "
+>
+  <p class="wel-text">WELCOME</p>
+  <p class="wel-text">ENJOY YOUR READING</p>
+</div>

@@ -5,7 +5,6 @@ body {
 }
 
 .book-container {
-
   width: 700px;
   border-radius: 16px;
   overflow: hidden;
@@ -18,8 +17,8 @@ body {
   overflow: hidden;
   color: aliceblue;
   /* background-color:rgb(116, 21, 205); */
-  background-color: black; 
- } 
+  background-color: black;
+}
 
 .book-poster {
   width: 300px;
@@ -27,7 +26,7 @@ body {
   object-fit: fill;
   margin-right: 10px;
 }
-.book_name{
+.book_name {
   padding-top: 30px;
   margin: 15px;
   margin-bottom: 50px;
@@ -36,12 +35,12 @@ body {
   font-weight: bold;
 }
 
-.pdate{
+.pdate {
   font-size: 23px;
   font-family: sans-serif;
   margin-bottom: 25px;
   /* padding-left: 200px; */
- 
+
   margin-bottom: 20px;
 }
 .book-spec {
@@ -61,19 +60,17 @@ body {
   font-size: 14px;
 }
 
-.author-name{
+.author-name {
   margin: 2opx;
   margin-top: 3px;
   margin-bottom: 30px;
-   font-size: 22px;
- font-style: italic;
- font-family: sans-serif;
- /* padding-left: 35px; */
+  font-size: 22px;
+  font-style: italic;
+  font-family: sans-serif;
+  /* padding-left: 35px; */
 }
 .book-button {
   margin-top: 25px;
   display: flex;
   gap: 30px;
-  
 }
-

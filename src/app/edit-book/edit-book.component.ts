@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { Validators, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from '../books.service';
 import { DatePipe } from '@angular/common';
@@ -10,28 +7,28 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-edit-book',
   templateUrl: './edit-book.component.html',
-  styleUrls: ['./edit-book.component.css']
+  styleUrls: ['./edit-book.component.css'],
 })
 export class EditBookComponent {
-
   constructor(
     private fb: FormBuilder,
     private booksService: BooksService,
-    private router: Router,private datepipe:DatePipe,
-    private route:ActivatedRoute
+    private router: Router,
+    private datepipe: DatePipe,
+    private route: ActivatedRoute
   ) {}
   publicationdateControl: any;
-  selected: string='';
-  select:string='';
+  selected: string | undefined ;
+  select: string | undefined ;
   addBookForm = this.fb.group({
-    id:'',
+    id: '',
     name: ['', [Validators.required]],
     author: ['', [Validators.required]],
-    category:['',[Validators.required]],
+    category: ['', [Validators.required]],
     poster: ['', [Validators.required, Validators.pattern('^(http|https).*')]],
     publicationdate: ['', [Validators.required]],
     status: ['', [Validators.required]],
-    description:['', [Validators.required, Validators.minLength(20)]]
+    description: ['', [Validators.required, Validators.minLength(20)]],
   });
   get name() {
     return this.addBookForm.get('name');
@@ -65,11 +62,14 @@ export class EditBookComponent {
       });
     });
   }
-  
-  onSubmit(){ 
+
+  onSubmit() {
     if (this.addBookForm.valid) {
       const newBook = this.addBookForm.value;
-      const dateToSave = this.datepipe.transform(newBook.publicationdate, 'MM/dd/yyyy');
+      const dateToSave = this.datepipe.transform(
+        newBook.publicationdate,
+        'MM/dd/yyyy'
+      );
       newBook.publicationdate = dateToSave;
 
       const updatedBook = this.addBookForm.value;
@@ -77,6 +77,5 @@ export class EditBookComponent {
         this.router.navigate(['/booklist']);
       });
     }
-  
-}
+  }
 }

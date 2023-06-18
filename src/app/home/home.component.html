@@ -1,8 +1,33 @@
-<app-search></app-search>
+<div class="form-container">
+  <form [formGroup]="searchForm" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter book name to search 🔍</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="searchField"
+        placeholder="Enter the book name..."
+        class="example-full-width"
+      />
+      <mat-error
+        *ngIf="(searchField?.invalid && searchField?.touched)&& searchField?.errors?.['required'] "
+      >
+        Book Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
 <div class="book-list-container">
-    <app-book-card
-      *ngFor="let bk of bookList$ | async; trackBy: trackByFn"
-      [book]="bk"
-      (delete)="delgetBook($event)"
-    ></app-book-card>
-  </div>
+  <app-book-card *ngFor="let bk of books" [book]="bk"></app-book-card>
+</div>
+
+<div
+  class="book-list-container"
+  *ngIf="searchForm.controls.searchField.value === ''"
+>
+  <app-book-card
+    *ngFor="let bk of bookList$ | async; trackBy: trackByFn"
+    [book]="bk"
+    (delete)="delgetBook($event)"
+  ></app-book-card>
+</div>
