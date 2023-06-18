@@ -28,7 +28,8 @@ export class EditBookComponent {
     poster: ['', [Validators.required, Validators.pattern('^(http|https).*')]],
     publicationdate: ['', [Validators.required]],
     status: ['', [Validators.required]],
-    rating: ['', [Validators.required, Validators.minLength(20)]],
+    rating: ['', [Validators.required, Validators.min(1),Validators.max(10)]],
+    description:['', [Validators.required, Validators.minLength(20)]]
   });
   get name() {
     return this.addBookForm.get('name');
