@@ -28,7 +28,7 @@ export class EditBookComponent {
     poster: ['', [Validators.required, Validators.pattern('^(http|https).*')]],
     publicationdate: ['', [Validators.required]],
     status: ['', [Validators.required]],
-    description: ['', [Validators.required, Validators.minLength(20)]],
+    rating: ['', [Validators.required, Validators.minLength(20)]],
   });
   get name() {
     return this.addBookForm.get('name');
@@ -50,6 +50,9 @@ export class EditBookComponent {
   }
   get description() {
     return this.addBookForm.get('description');
+  }
+  get rating() {
+    return this.addBookForm.get('rating');
   }
   ngOnInit() {
     this.route.paramMap.subscribe((route) => {

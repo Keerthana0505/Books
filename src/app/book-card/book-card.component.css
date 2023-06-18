@@ -27,14 +27,24 @@ body {
   margin-right: 10px;
 }
 .book_name {
-  padding-top: 30px;
+  padding-top: 1px;
   margin: 15px;
   margin-bottom: 50px;
   font-size: 33px;
   font-family: sans-serif;
   font-weight: bold;
+  display: flex;
+}
+.pdate1 {
+  font-size: 23px;
+  font-family: sans-serif;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 3px;
 }
 
+    
 .pdate {
   font-size: 23px;
   font-family: sans-serif;
@@ -49,7 +59,10 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
+.sb{
+  padding-left: 290px;
+ margin-bottom: 20px;
+}
 .book-spec h2 {
   margin: 0;
   font-size: 20px;
@@ -61,7 +74,7 @@ body {
 }
 
 .author-name {
-  margin: 2opx;
+  margin: 2px;
   margin-top: 3px;
   margin-bottom: 30px;
   font-size: 22px;
@@ -73,4 +86,16 @@ body {
   margin-top: 25px;
   display: flex;
   gap: 30px;
+}
+.status-book {
+  padding-left: 290px;
+  margin-bottom: 20px;
+   display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgb(218, 221, 231);
+  color: rgb(13, 13, 13);
+  border-radius: 20px;
+  padding: 6px 9px;
+  font-size: 12px;
 }

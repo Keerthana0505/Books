@@ -1,42 +1,48 @@
 .book-container {
-  align-content: center;
-  justify-content: center;
   border-radius: 16px;
   overflow: hidden;
   padding: 16px;
-  margin-top: 10px;
   border-radius: 20px;
   overflow: hidden;
   color: aliceblue;
   padding-left: 30px;
   background-color: black;
-  padding-right: 30px;
-  width: 90%;
+  width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 16px;
+  justify-content: center;
+
+
 }
-.left {
-  padding-top: 16px;
-  height: 100%;
-  width: 100%;
-  padding-left: 50px;
-  object-fit: cover;
-  width: 100%;
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  background-color:rgb(198, 172, 232);
+  margin: 0;
+      padding: 20px;
+      width:100%;
+
 }
 .book-poster {
   height: 400px;
   object-fit: fill;
-  width: 80%;
-
+  width: 100%;
 }
 .book-spec {
   align-items: center;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 .book-spec > h1 {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: bold;
 }
 .book-spec > p {
-  font-size: 20px;
+  font-size: 17px;
   font-style: 17s;
   font-weight: bold;
   font-style: italic;
@@ -47,4 +53,11 @@
   color: #7c6e6e;
   justify-content: center;
   margin-bottom: 25px;
+}
+body{
+  background-color:rgb(198, 172, 232);
+
+      width:100%;
+      padding-top: 30px;
+      height: 100%;
 }

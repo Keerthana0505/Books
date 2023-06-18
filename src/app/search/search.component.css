@@ -5,15 +5,25 @@
   text-align: center;
   display: flex;
   height: 15vh;
+
+ 
+  
+}
+body{
+  background-color:rgb(198, 172, 232);
 }
 .mat-form-field {
   width: 100%;
+  border-bottom-left-radius: 34px ;
+  border-bottom-right-radius: 34px ;
+  border-radius: 34px;
 }
 .book-list-container {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color:rgb(198, 172, 232);
 }
 
 input.mat-input-element {
@@ -21,11 +31,14 @@ input.mat-input-element {
 }
 
 .example-form {
+
   min-width: 150px;
   max-width: 500px;
   width: 100%;
+  
 }
 
 .example-full-width {
   width: 100%;
+  
 }

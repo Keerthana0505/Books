@@ -2,19 +2,21 @@
   <div class="book-container">
     <img class="book-poster" [src]="book.poster" [alt]="book.name" />
     <div class="book-spec">
-      <div class="book_name">{{ book.name }}</div>
+      <div class="sb">
+
+      <div class="status-book">
+        {{ book.status }}
+      </div>
+      
+    </div>
+      <div class="book_name">{{ book.name }}  </div>
       <div class="author-name">{{ book.author }}</div>
       <div class="pdate">{{ book.publicationdate }}</div>
       <div class="pdate">{{ book.category }}</div>
-      <div class="pdate">
-        <mat-icon
-          aria-hidden="false"
-          aria-label="status icon"
-          fontIcon="library_books"
-        ></mat-icon>
-        {{ book.status }}
-      </div>
+      <div class="pdate1" >  <mat-icon mat-fab
+        color="primary">star</mat-icon> {{book.rating }}</div>
       <div class="book-button">
+    
         <button
           (click)="delbook(book.id)"
           mat-fab

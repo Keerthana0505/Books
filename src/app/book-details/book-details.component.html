@@ -1,10 +1,11 @@
 <body>
-  <div style="width: 50%; float: right" class="content">
+  <div class="content">
     <div class="book-container">
       <img class="book-poster" [src]="book.poster" [alt]="book.name" />
       <div class="book-spec">
         <h1>{{ book.name }}</h1>
         <p>{{ book.author }}</p>
+        <p>⭐ {{book.rating }}</p>
       </div>
       <button
         (click)="toggleDescription()"
@@ -13,7 +14,7 @@
       >
         <mat-icon>keyboard_control_key</mat-icon>
       </button>
-      <p *ngIf="show" class="movie-summary">{{ book.description }}</p>
+      <p *ngIf="show" >{{ book.description }}</p>
       <div class="action-items">
         <button
           (click)="delbook(book.id)"
@@ -31,12 +32,5 @@
         </button>
       </div>
     </div>
-  </div>
-  <div style="width: 45%; float: left">
-    <img
-      class="left"
-      src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?w=2000"
-      alt="background image"
-    />
   </div>
 </body>

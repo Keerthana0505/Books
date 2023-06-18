@@ -96,6 +96,23 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
+        <mat-label>Rating</mat-label>
+        <input
+          type="number"
+          matInput
+          formControlName="rating"
+          placeholder="Enter the rating of the book "
+        />
+          <mat-error *ngIf="rating?.errors?.['required'] && rating?.invalid && rating?.touched">Rating is required</mat-error>
+          <mat-error *ngIf="rating?.errors?.['min']">Fill  with extra rating </mat-error>
+          <mat-error *ngIf="rating?.errors?.['max']">Too much rating </mat-error>
+      
+      
+
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
         <mat-label>Select the status</mat-label>
         <mat-select [(value)]="select" formControlName="status">
           <mat-option>None</mat-option>

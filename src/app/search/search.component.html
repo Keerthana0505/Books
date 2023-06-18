@@ -1,4 +1,4 @@
-<div class="form-container">
+<body><div class="form-container">
   <form [formGroup]="searchForm" class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Enter book name to search 🔍</mat-label>
@@ -21,3 +21,4 @@
 <div class="book-list-container">
   <app-book-card *ngFor="let bk of books" [book]="bk"></app-book-card>
 </div>
+</body>

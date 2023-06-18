@@ -27,6 +27,7 @@ export class AddBookComponent {
     publicationdate: ['', [Validators.required]],
     status: ['', [Validators.required]],
     description: ['', [Validators.required, Validators.minLength(20)]],
+    rating: ['', [Validators.required, Validators.min(0), Validators.max(10)]]
   });
   get name() {
     return this.addBookForm.get('name');
@@ -45,6 +46,9 @@ export class AddBookComponent {
   }
   get category() {
     return this.addBookForm.get('category');
+  }
+  get rating() {
+    return this.addBookForm.get('rating');
   }
   get description() {
     return this.addBookForm.get('description');

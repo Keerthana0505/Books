@@ -15,6 +15,7 @@ export interface Book {
   author: string;
   category: string;
   poster: string;
+  rating:number;
   publicationdate: string;
   status: string;
   description: string;
