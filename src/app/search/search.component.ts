@@ -15,7 +15,9 @@ import { Book } from '../home/home.component';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
-  books: any;
+  
+  books: any = [];
+
   constructor(private http: HttpClient, private fb: FormBuilder) {}
 
   searchForm = this.fb.group({

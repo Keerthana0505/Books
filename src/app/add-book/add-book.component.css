@@ -17,6 +17,9 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+    min-width: 150px;
+    max-width: 500px;
+   
 }
 .example-full-width {
   width: 80%;

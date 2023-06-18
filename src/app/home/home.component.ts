@@ -43,7 +43,7 @@ export class HomeComponent {
     return bk.id;
   }
 
-  books: any;
+  books: any = [];
   searchForm = this.fb.group({
     searchField: [''],
   });
