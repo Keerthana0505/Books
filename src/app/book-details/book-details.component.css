@@ -1,26 +1,50 @@
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
 .book-container {
-    /* background: orange; */
-    width: 380px;
+ 
+
+    align-content: center;
+    justify-content: center;
     border-radius: 16px;
     overflow: hidden;
     padding: 16px;
-    align-items: center;
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: aliceblue;
+    padding-left: 30px;
+    background-color: black; 
+  padding-right: 30px;
+    
+  }
+  .content{
+    width: 40%;
+    float: right;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 16px;
+    padding-right: 80px;
+    justify-content: center;
     align-content: center;
   }
-  
+  .img{
+    width: 50%;
+    float: left;
+    object-fit: fill;
+    justify-content: center;
+    
+     
+  }
+  .left{
+   
+    height:730px;
+    width: 100%; 
+    padding-left: 50px;
+    padding-top: 20px;
+  }
   .book-poster {
-    height: 300px;
+    height: 400px;
     object-fit:fill;
-    width: 80%;
-  
+    width: 80%; 
     /* border-radius: 17px; */
   }
   .book-spec {

@@ -28,9 +28,14 @@ export class BooksService {
    
   }
   getbookById(id: string) {
+    console.log(this.http
+      .get<Book>(`https://648bf9078620b8bae7ebfae8.mockapi.io/books/${id}`)
+      .pipe(catchError((err) => [])));
     return this.http
     .get<Book>(`https://648bf9078620b8bae7ebfae8.mockapi.io/books/${id}`)
     .pipe(catchError((err) => []));
+    
+    
 
   }
   updateBook(book: Book) {

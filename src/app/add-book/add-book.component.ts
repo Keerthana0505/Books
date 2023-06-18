@@ -2,14 +2,11 @@ import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-  FormGroup,
-  FormControl,
   Validators,
   FormBuilder,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BooksService } from '../books.service';
-import { Book } from '../home/home.component';
 @Component({
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',

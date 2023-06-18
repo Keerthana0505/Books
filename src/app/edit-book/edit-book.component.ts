@@ -6,7 +6,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from '../books.service';
 import { DatePipe } from '@angular/common';
-import { Route } from '@angular/router';
+
 @Component({
   selector: 'app-edit-book',
   templateUrl: './edit-book.component.html',
@@ -25,11 +25,11 @@ export class EditBookComponent {
   select:string='';
   addBookForm = this.fb.group({
     id:'',
-    name: ['', Validators.required],
+    name: ['', [Validators.required]],
     author: ['', [Validators.required]],
     category:['',[Validators.required]],
     poster: ['', [Validators.required, Validators.pattern('^(http|https).*')]],
-   publicationdate: ['', [Validators.required]],
+    publicationdate: ['', [Validators.required]],
     status: ['', [Validators.required]],
     description:['', [Validators.required, Validators.minLength(20)]]
   });
@@ -55,20 +55,22 @@ export class EditBookComponent {
     return this.addBookForm.get('description');
   }
   ngOnInit() {
-
     this.route.paramMap.subscribe((route) => {
       const bookId = route.get('id');
       this.booksService.getbookById(bookId as string).subscribe((data) => {
-        this.addBookForm.patchValue(data as any);
+        const book = data as any;
+        const publicationDate = new Date(book.publicationdate); // Convert the date string to a Date object
+        book.publicationdate = publicationDate;
+        this.addBookForm.patchValue(book);
       });
     });
   }
+  
   onSubmit(){ 
     if (this.addBookForm.valid) {
       const newBook = this.addBookForm.value;
-    const dateToSave = this.datepipe.transform(newBook.publicationdate, 'MM/dd/yyyy');
-    newBook.publicationdate = dateToSave;
-    
+      const dateToSave = this.datepipe.transform(newBook.publicationdate, 'MM/dd/yyyy');
+      newBook.publicationdate = dateToSave;
 
       const updatedBook = this.addBookForm.value;
       this.booksService.updateBook(updatedBook as any).subscribe(() => {

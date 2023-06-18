@@ -1,18 +1,19 @@
 <body>
-  <div style="width: 40%; float:left">
+  <div style="width: 50%; float:left">
 
   <img class="imagebook" src="https://media.istockphoto.com/id/628925698/vector/pile-of-hardcover-books.jpg?s=612x612&w=0&k=20&c=UskxzCZAQ4LXrgMhgW3M8Q5jdtWFPZ8WxwosF6h6euI=" alt="Image of Book">
  </div>
- <div style="width: 60% ; float:right">
+ <div style="width: 50% ; float:right">
   <form class="add-book-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
-  <mat-form-field class="example-full-width">
-    <mat-label>Book Name</mat-label>
-    <input type="text" matInput formControlName="name"
-           placeholder="Enter the book name..." class="example-full-width">
-    <mat-error *ngIf="(name?.invalid && name?.touched)&& name?.errors?.['required'] ">
-      Book Name  is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Book Name</mat-label>
+      <input type="text" matInput formControlName="name"
+             placeholder="Enter the name's name...">
+      <mat-error *ngIf="(name?.invalid && name?.touched)&& name?.errors?.['required'] ">
+        Book name  is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Author Name</mat-label>
@@ -55,16 +56,16 @@
 
    
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Choose a date</mat-label>
-      <input type="text" matInput [matDatepicker]="picker" formControlName="publicationdate">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-error *ngIf="(publicationdate?.invalid && publicationdate?.touched)&& publicationdate?.errors?.['required'] ">
-        Please Select the Published Date
-        </mat-error>
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Choose a date</mat-label>
+    <input type="text" matInput [matDatepicker]="picker" formControlName="publicationdate">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="(publicationdate?.invalid && publicationdate?.touched)&& publicationdate?.errors?.['required'] ">
+      Please Select the Published Date
+      </mat-error>
+  </mat-form-field>
 
     <mat-form-field class="example-full-width">
     <mat-label>Select the status</mat-label>
